@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
-import { PendaftaranProvider } from './context/PendaftaranContext'
+import PendaftaranProvider from './context/PendaftaranProvider'  // ← default import
 import './index.css'
 import App from './App.jsx'
 
