@@ -6,6 +6,9 @@ import Dokter from './pages/Dokter'
 import Blog from './pages/Blog'
 import BlogDetail from './pages/BlogDetail'
 import Contact from './pages/Contact'
+import Profil from './pages/Profil'
+import VisiMisi from './pages/VisiMisi'
+import Ambulan from './pages/Ambulan'
 
 import PilihPasien from './pages/pendaftaran/PilihPasien'
 import FormPendaftaran from './pages/pendaftaran/FormPendaftaran'
@@ -20,6 +23,9 @@ function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/profil" element={<Profil />} />
+        <Route path="/visi-misi" element={<VisiMisi />} />
+        <Route path="/ambulan" element={<Ambulan />} />
         <Route path="/dokter" element={<Dokter />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />

@@ -16,6 +16,9 @@ const Navbar = () => {
     { label: 'Dokter & Jadwal', path: '/dokter' },
     { label: 'Pendaftaran', path: '/pendaftaran' },
     { label: 'Blog', path: '/blog' },
+    { label: 'Visi & Misi', path: '/visi-misi' },
+    { label: 'Ambulan', path: '/ambulan' },
+    { label: 'Profil', path: '/profil' },
    
   
     { label: 'Kontak', path: '/contact' }
