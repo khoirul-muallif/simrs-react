@@ -1,17 +1,9 @@
-// pages/VisiMisi.jsx
+// pages/VisiMisi.jsx — 10 baris
 import usePageSection from '../hooks/usePageSection'
-import PageSection from '../components/ui/PageSection'
-import Spinner from '../components/ui/Spinner'
+import PageLayout from '../components/layout/PageLayout'
 
 const VisiMisi = () => {
   const { section, loading } = usePageSection('visimisi')
-  if (loading) return <Spinner />
-  return (
-    <div className="max-w-5xl mx-auto px-6 py-12">
-      <h1 className="text-3xl font-bold text-gray-800 mb-8">Visi & Misi</h1>
-      <PageSection section={section} />
-    </div>
-  )
+  return <PageLayout title="Visi & Misi" section={section} loading={loading} />
 }
 export default VisiMisi
-
