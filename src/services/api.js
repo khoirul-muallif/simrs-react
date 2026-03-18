@@ -1,3 +1,4 @@
+// E:\laragon\www\simrs-react\src\services\api.js
 import axios from 'axios'
 
 const api = axios.create({
@@ -12,9 +13,9 @@ const api = axios.create({
 export const getBeranda = () => api.get('/beranda')
 
 // Gallery
-export const getGallery = (type = null) =>
-  api.get('/gallery', { params: type ? { type } : {} })
-
+// Gallery
+export const getGallery = (params = {}) =>
+  api.get('/gallery', { params })
 // Mitra
 export const getMitra = () => api.get('/mitra')
 

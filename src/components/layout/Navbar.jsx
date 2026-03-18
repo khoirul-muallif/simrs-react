@@ -5,7 +5,7 @@ import { FaHospital, FaBars, FaTimes, FaPhone, FaClock, FaChevronDown } from 're
 const DropdownItem = ({ to, children }) => (
   <NavLink to={to}
     className={({ isActive }) =>
-      `block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600 transition ${isActive ? 'text-blue-600 font-semibold' : 'text-gray-600'}`
+      `block px-4 py-2 text-sm hover:bg-green-50 hover:text-green-600 transition ${isActive ? 'text-green-600 font-semibold' : 'text-gray-600'}`
     }>
     {children}
   </NavLink>
@@ -15,7 +15,7 @@ const Dropdown = ({ label, children }) => {
   const [open, setOpen] = useState(false)
   return (
     <div className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-      <button className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-blue-600 transition py-1">
+      <button className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-green-600 transition py-1">
         {label} <FaChevronDown className="text-xs" />
       </button>
       {open && (
@@ -38,7 +38,7 @@ const Navbar = () => {
     <header className="w-full shadow-md sticky top-0 z-50 bg-white">
 
       {/* Top Bar */}
-      <div className="bg-blue-700 text-white text-sm px-6 py-2">
+      <div className="bg-green-700 text-white text-sm px-6 py-2">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-2">
             <FaPhone className="text-xs" />
@@ -56,9 +56,9 @@ const Navbar = () => {
 
         {/* Logo */}
         <NavLink to="/" className="flex items-center gap-2">
-          <FaHospital className="text-blue-600 text-3xl" />
+          <FaHospital className="text-green-600 text-3xl" />
           <div>
-            <p className="text-blue-700 font-bold text-lg leading-tight">RSU Banyumanik 2</p>
+            <p className="text-green-700 font-bold text-lg leading-tight">RSU Banyumanik 2</p>
             <p className="text-gray-400 text-xs">Semarang</p>
           </div>
         </NavLink>
@@ -69,7 +69,7 @@ const Navbar = () => {
           <li>
             <NavLink to="/" end
               className={({ isActive }) =>
-                `text-sm font-medium transition hover:text-blue-600 ${isActive ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-gray-600'}`
+                `text-sm font-medium transition hover:text-green-600 ${isActive ? 'text-green-600 border-b-2 border-green-600 pb-1' : 'text-gray-600'}`
               }>
               Beranda
             </NavLink>
@@ -79,6 +79,7 @@ const Navbar = () => {
             <Dropdown label="Profil">
               <DropdownItem to="/profil">Profil RS</DropdownItem>
               <DropdownItem to="/visi-misi">Visi & Misi</DropdownItem>
+              <DropdownItem to="/mitra">Mitra</DropdownItem>
               <DropdownItem to="/indikator-mutu">Indikator Mutu</DropdownItem>
             </Dropdown>
           </li>
@@ -95,7 +96,7 @@ const Navbar = () => {
           <li>
             <NavLink to="/dokter"
               className={({ isActive }) =>
-                `text-sm font-medium transition hover:text-blue-600 ${isActive ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-gray-600'}`
+                `text-sm font-medium transition hover:text-green-600 ${isActive ? 'text-green-600 border-b-2 border-green-600 pb-1' : 'text-gray-600'}`
               }>
               Jadwal Dokter
             </NavLink>
@@ -113,20 +114,26 @@ const Navbar = () => {
           <li>
             <NavLink to="/blog"
               className={({ isActive }) =>
-                `text-sm font-medium transition hover:text-blue-600 ${isActive ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-gray-600'}`
+                `text-sm font-medium transition hover:text-green-600 ${isActive ? 'text-green-600 border-b-2 border-green-600 pb-1' : 'text-gray-600'}`
               }>
               Blog
             </NavLink>
           </li>
 
         </ul>
+        <NavLink
+          to="/pendaftaran"
+          className="hidden md:block bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-5 py-2 rounded-full transition"
+          >
+          📋 Pendaftaran Online
+        </NavLink>
 
         {/* Desktop Button */}
-        <a href="https://perjanjian.rsubanyumanik2.com/"
+        {/* <a href="https://perjanjian.rsubanyumanik2.com/"
           target="_blank" rel="noreferrer"
           className="hidden md:block bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-5 py-2 rounded-full transition">
           📋 Pendaftaran Online
-        </a>
+        </a> */}
 
         {/* Mobile Hamburger */}
         <button className="md:hidden text-gray-600 text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
@@ -139,7 +146,7 @@ const Navbar = () => {
         <div className="md:hidden bg-white border-t px-6 py-4 flex flex-col gap-2">
 
           <NavLink to="/" end onClick={() => setMenuOpen(false)}
-            className={({ isActive }) => `text-sm font-medium py-2 ${isActive ? 'text-blue-600 font-bold' : 'text-gray-600'}`}>
+            className={({ isActive }) => `text-sm font-medium py-2 ${isActive ? 'text-green-600 font-bold' : 'text-gray-600'}`}>
             Beranda
           </NavLink>
 
@@ -150,10 +157,10 @@ const Navbar = () => {
               Profil <FaChevronDown className={`text-xs transition ${mobileDropdown === 'profil' ? 'rotate-180' : ''}`} />
             </button>
             {mobileDropdown === 'profil' && (
-              <div className="pl-4 flex flex-col gap-1 border-l-2 border-blue-100 ml-2 mb-2">
-                {[['Profil RS', '/profil'], ['Visi & Misi', '/visi-misi'], ['Indikator Mutu', '/indikator-mutu']].map(([label, path]) => (
+              <div className="pl-4 flex flex-col gap-1 border-l-2 border-green-100 ml-2 mb-2">
+                {[['Profil RS', '/profil'], ['Visi & Misi', '/visi-misi'],['Mitra', '/mitra'],['Indikator Mutu', '/indikator-mutu']].map(([label, path]) => (
                   <NavLink key={path} to={path} onClick={() => setMenuOpen(false)}
-                    className="text-sm text-gray-500 py-1 hover:text-blue-600">{label}</NavLink>
+                    className="text-sm text-gray-500 py-1 hover:text-green-600">{label}</NavLink>
                 ))}
               </div>
             )}
@@ -166,7 +173,7 @@ const Navbar = () => {
               Informasi <FaChevronDown className={`text-xs transition ${mobileDropdown === 'informasi' ? 'rotate-180' : ''}`} />
             </button>
             {mobileDropdown === 'informasi' && (
-              <div className="pl-4 flex flex-col gap-1 border-l-2 border-blue-100 ml-2 mb-2">
+              <div className="pl-4 flex flex-col gap-1 border-l-2 border-green-100 ml-2 mb-2">
                 {[
                   ['Kamar Rawat Inap', '/pelayanan/rawat-inap'],
                   ['Home Care', '/pelayanan/home-care'],
@@ -174,32 +181,35 @@ const Navbar = () => {
                   ['Ambulan 24 Jam', '/ambulan'],
                 ].map(([label, path]) => (
                   <NavLink key={path} to={path} onClick={() => setMenuOpen(false)}
-                    className="text-sm text-gray-500 py-1 hover:text-blue-600">{label}</NavLink>
+                    className="text-sm text-gray-500 py-1 hover:text-green-600">{label}</NavLink>
                 ))}
               </div>
             )}
           </div>
 
           <NavLink to="/dokter" onClick={() => setMenuOpen(false)}
-            className={({ isActive }) => `text-sm font-medium py-2 ${isActive ? 'text-blue-600 font-bold' : 'text-gray-600'}`}>
+            className={({ isActive }) => `text-sm font-medium py-2 ${isActive ? 'text-green-600 font-bold' : 'text-gray-600'}`}>
             Jadwal Dokter
           </NavLink>
 
           <NavLink to="/blog" onClick={() => setMenuOpen(false)}
-            className={({ isActive }) => `text-sm font-medium py-2 ${isActive ? 'text-blue-600 font-bold' : 'text-gray-600'}`}>
+            className={({ isActive }) => `text-sm font-medium py-2 ${isActive ? 'text-green-600 font-bold' : 'text-gray-600'}`}>
             Blog
           </NavLink>
 
           <NavLink to="/gallery" onClick={() => setMenuOpen(false)}
-            className={({ isActive }) => `text-sm font-medium py-2 ${isActive ? 'text-blue-600 font-bold' : 'text-gray-600'}`}>
+            className={({ isActive }) => `text-sm font-medium py-2 ${isActive ? 'text-green-600 font-bold' : 'text-gray-600'}`}>
             Gallery
           </NavLink>
-
-          <a href="https://perjanjian.rsubanyumanik2.com/" target="_blank" rel="noreferrer"
+          <NavLink to="/pendaftaran" onClick={() => setMenuOpen(false)}
+             className="mt-2 bg-green-500 text-white text-sm text-center font-semibold px-5 py-2 rounded-full">
+            📋 Pendaftaran Online
+          </NavLink>
+          {/* <a href="https://perjanjian.rsubanyumanik2.com/" target="_blank" rel="noreferrer"
             onClick={() => setMenuOpen(false)}
             className="mt-2 bg-green-500 text-white text-sm text-center font-semibold px-5 py-2 rounded-full">
             📋 Pendaftaran Online
-          </a>
+          </a> */}
         </div>
       )}
 

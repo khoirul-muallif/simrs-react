@@ -14,10 +14,12 @@ import PaketKesehatan from './pages/pelayanan/PaketKesehatan'
 import HomeCareIndex from './pages/homecare/HomeCareIndex'
 import HomeCareKonfirmasi from './pages/homecare/HomeCareKonfirmasi'
 import HomeCareLacak from './pages/homecare/HomeCareLacak'
-
+import IndikatorMutu from './pages/IndikatorMutu'
+import Gallery from './pages/Gallery'
 import PilihPasien from './pages/pendaftaran/PilihPasien'
 import FormPendaftaran from './pages/pendaftaran/FormPendaftaran'
 import Konfirmasi from './pages/pendaftaran/Konfirmasi'
+import Mitra from './pages/Mitra'
 
 import Login from './pages/Login'
 import Register from './pages/Register'
@@ -41,9 +43,13 @@ function App() {
         <Route path="/pelayanan/rawat-inap" element={<RawatInap />} />
         <Route path="/pelayanan/paket-kesehatan" element={<PaketKesehatan />} />
         <Route path="/pelayanan/home-care" element={<HomeCareIndex />} />
-<Route path="/pelayanan/home-care/konfirmasi/:token" element={<HomeCareKonfirmasi />} />
-<Route path="/pelayanan/home-care/lacak" element={<HomeCareLacak />} />
-<Route path="/pelayanan/home-care/track/:token" element={<HomeCareKonfirmasi />} />
+        <Route path="/pelayanan/home-care/konfirmasi/:token" element={<HomeCareKonfirmasi />} />
+        <Route path="/pelayanan/home-care/lacak" element={<HomeCareLacak />} />
+        <Route path="/pelayanan/home-care/track/:token" element={<HomeCareKonfirmasi />} />
+        <Route path="/indikator-mutu" element={<IndikatorMutu />} />
+        <Route path="/gallery" element={<Gallery />} />
+         <Route path="/gallery?type=:type" element={<Gallery />} />
+        <Route path="/mitra" element={<Mitra />} />
       </Route>
 
       <Route path="/login" element={<Login />} />

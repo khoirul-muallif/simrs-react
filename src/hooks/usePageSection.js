@@ -1,3 +1,4 @@
+// E:\laragon\www\simrs-react\src\hooks\usePageSection.js
 import { useState, useEffect } from 'react'
 import { getPageBySlug } from '../services/api'
 

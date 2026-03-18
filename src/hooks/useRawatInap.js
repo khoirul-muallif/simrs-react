@@ -1,3 +1,4 @@
+// E:\laragon\www\simrs-react\src\hooks\useRawatInap.js
 import { useState, useEffect } from 'react'
 import { getRawatInap } from '../services/api'
 

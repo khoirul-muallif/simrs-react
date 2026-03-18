@@ -1,3 +1,5 @@
+
+// E:\laragon\www\simrs-react\src\pages\pelayanan\RawatInap.jsx
 import usePageSection from '../../hooks/usePageSection'
 import useRawatInap from '../../hooks/useRawatInap'
 import PageLayout from '../../components/layout/PageLayout'
